@@ -39,7 +39,7 @@ of degrees*10. See "Base.c" for more information.
 #include "Base.c" //This includes all of the functions that involve the base
 #include "Claw.c" //This includes all of the functions that involve the claw
 #include "Extension.c" //This includes all of the functions that involve the extension
-#include "Wrist.c" //This inclues all of the functions that involve the extension
+#include "Wrist.c" //This inclues all of the functions that involve the wrist
 #include "Multiple_Parts.c" //This includes all functions that involve multiple subsystems
 
 
@@ -79,7 +79,7 @@ task main()
 
 	turnRightWithGyro(127, 85);
 	moveBaseForTime(127, 127, 2);
-	moveBaseArmExtensionClawAndWrist(-40, 127, 112, 95, closeclaw, -79, 1);
+	moveBaseArmExtensionClawAndWrist(-40, 127, 115, 97, closeclaw, -79, 1);
 	turnLeftWithGyro(127, 0);
 	turnRightWithGyro(127, 45);
 	moveBaseAndArm(127, 127, 15, 1.5);
@@ -91,16 +91,16 @@ task main()
 	moveBaseForTime(127, 127, 1.7);
 	turnLeftWithGyro(127, 0);
 	moveBaseForTime(127, 127, 1.2);
-	moveClawForRotationsUp(127, -460);
+	moveClawForRotationsUp(127, -440);
 	moveBaseArmExtensionClawAndWrist(-127, -127, 40, -127, openclaw, 55, 1.5);
 
 
-	moveBaseAndArm(127, -127, -127, 1.2);
+	moveBaseAndArm(70, -70, -127, 1);
 	turnRightWithGyro(127, 130);
-	moveBaseForTime(127, 127, 1);
+	moveBaseForTime(127, 127, 1.3);
 	moveClawForTime(closeclaw);
 	turnRightWithGyro(127, 176);
-	moveBaseAndArm(-127, -127, 127, 1.5);
+	moveBaseAndArm(-127, -127, 127, 1.8);
 	moveBaseForTime(-127, -127, 0.5);
 	moveBaseArmAndClaw(127, 60, -127, openclaw, 2.5);
 
@@ -110,5 +110,19 @@ task main()
 	moveBaseForTime(127, 127, 0.8);
 	moveBaseArmAndClaw(-127, -100, 127, closeclaw, 1.5);
 	moveBaseAndArm(-127, -127, 60, 0.8);
-	moveBaseArmAndClaw(127, 127, -127, openclaw, 2);
+	moveBaseArmAndClaw(127, 127, -127, openclaw, 1.4);
+
+
+	turnLeftWithGyro(127, 150);
+	moveBaseForTime(127, 127, 0.5);
+	moveBaseArmExtensionClawAndWrist(-127, -127, 127, 100, closeclaw, 0, 1.8);
+	moveBaseForTime(0, -127, 0.8);
+	moveBaseArmExtensionClawAndWrist(100, 100, -100, -127, openclaw, 0, 1.5);
+
+
+	moveBaseAndArm(127, 50, -127, 1);
+	moveBaseForTime(127, 127, 0.8);
+	moveBaseArmAndClaw(-127, -80, 127, closeclaw, 2);
+	moveBaseForTime(-127, -127, 0.8);
+	moveBaseArmAndClaw(127, 127, -127, openclaw, 1.5);
 }
